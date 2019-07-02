@@ -5,8 +5,8 @@ services:
     build: ./docker-utils/php-fpm-apache/php7.2/
     volumes:
       - ./docroot:/var/www/html/
-      - ./docker-utils/php-fpm-apache/7.2/docker-utils/apache2/app.conf:/etc/apache2/sites-enabled/000-default.conf
-      - ./docker-utils/php-fpm-apache/7.2/docker-utils/apache2/app.conf:/etc/apache2/sites-available/000-default.conf
+      - ./docker-utils/php-fpm-apache/php7.2/docker-utils/apache2/app.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./docker-utils/php-fpm-apache/php7.2/docker-utils/apache2/app.conf:/etc/apache2/sites-available/000-default.conf
     depends_on:
       - db
     container_name: web_web
@@ -16,9 +16,9 @@ services:
       - ./docker-utils/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: drupal_root
-      MYSQL_DATABASE: drupal
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: webeney
+      MYSQL_USER: webeney
+      MYSQL_PASSWORD: webeney_carhousepen334
     container_name: web_db
 
   proxy:
