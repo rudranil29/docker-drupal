@@ -16,15 +16,15 @@ services:
       - ./docker-utils/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: drupal_root
-      MYSQL_DATABASE: webeney
-      MYSQL_USER: webeney
-      MYSQL_PASSWORD: webeney_carhousepen334
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
     container_name: web_db
 
   proxy:
     build: ./docker-utils/nginx
     ports:
-    - "80:80"
+    - "8099:80"
     volumes:
     - ./docker-utils/nginx/conf.d:/etc/nginx/conf.d/
     depends_on:
